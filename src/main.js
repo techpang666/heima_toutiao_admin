@@ -8,9 +8,12 @@ import '@/styles/index.less'
 import router from '@/router/index'
 
 // 按需引入element组件
-import { Button, Select } from 'element-ui';
+import { Button, Select, Form, FormItem, Input } from 'element-ui';
 Vue.use(Button)
 Vue.use(Select)
+Vue.use(Form)
+Vue.use(FormItem)
+Vue.use(Input)
 
 
 
