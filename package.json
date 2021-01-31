@@ -1,0 +1,24 @@
+{
+  "name": "heima_toutiao_admin",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "dev": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "element-ui": "^2.15.0",
+    "vue": "^2.6.11",
+    "vue-router": "^3.5.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "babel-plugin-component": "^1.1.1",
+    "less": "^3.0.4",
+    "less-loader": "^5.0.0",
+    "vue-template-compiler": "^2.6.11"
+  }
+}
