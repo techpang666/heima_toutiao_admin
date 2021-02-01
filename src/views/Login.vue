@@ -35,6 +35,8 @@
 <script>
 // 引入登录方法
 import { login } from '@/apis/user';
+// 引入Message组件
+import { Message } from 'element-ui';
 
 export default {
 	data() {
@@ -69,8 +71,24 @@ export default {
 					// 这个login是axios的login方法
 					let res = await login(this.loginForm);
 					console.log(res);
+					// 对登录数据进行相关提示
+					if (res.data.statusCode == 401) {
+						Message({
+							message: res.data.message,
+							type: 'warning',
+						});
+					} else {
+						Message({
+							message: res.data.message,
+							type: 'success',
+						});
+					}
 				} else {
-					alert('数据不合法');
+					// alert('数据不合法');
+					Message({
+						message: '数据不合法',
+						type: 'warning',
+					});
 					// 养成好习惯 不然如果后面还有请求 会照发不误
 					return false;
 				}
