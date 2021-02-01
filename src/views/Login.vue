@@ -1,7 +1,7 @@
 <template>
 	<div class="login">
 		<div class="container">
-			<img src="../assets/avatar.jpg" class="avatar" alt="" />
+			<img src="../assets/money.jpg" class="avatar" alt="" />
 			<el-form
 				:model="loginForm"
 				:rules="rules"
@@ -59,11 +59,22 @@ export default {
 	},
 	methods: {
 		// 发起登录请求(async await)
-		async login() {
-			// 上面的login是点击事件调用的方法
-			// 这个login是axios的login方法
-			let res = await login(this.loginForm);
-			console.log(res);
+		login() {
+			// 通过validate方法验证是否成功及未通过验证的字段
+			// async要在await的直接父级函数中
+			this.$refs.loginForm.validate(async (valid, obj) => {
+				console.log(valid, obj);
+				if (valid) {
+					// 上面的login是点击事件调用的方法
+					// 这个login是axios的login方法
+					let res = await login(this.loginForm);
+					console.log(res);
+				} else {
+					alert('数据不合法');
+					// 养成好习惯 不然如果后面还有请求 会照发不误
+					return false;
+				}
+			});
 		},
 		// 处理输入框的焦点事件
 		handlerFocus(propName) {
