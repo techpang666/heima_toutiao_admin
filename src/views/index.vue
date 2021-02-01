@@ -1,7 +1,53 @@
 <template>
 	<div class="index">
 		<el-container>
-			<el-aside width="200px">Aside</el-aside>
+			<el-aside width="200px">
+				<el-menu
+					default-active="2"
+					class="el-menu-vertical-demo"
+					background-color="#545c64"
+					text-color="#fff"
+					active-text-color="#ffd04b"
+				>
+					<!-- 用户管理 -->
+					<el-submenu index="1">
+						<template slot="title">
+							<i class="el-icon-location"></i>
+							<span>用户管理</span>
+						</template>
+						<el-menu-item index="1-1">
+							<i class="el-icon-user"></i>
+							<span>用户列表</span>
+						</el-menu-item>
+					</el-submenu>
+					<!-- 文章管理 -->
+					<el-submenu index="1">
+						<template slot="title">
+							<i class="el-icon-location"></i>
+							<span>文章管理</span>
+						</template>
+						<el-menu-item index="1-1">
+							<i class="el-icon-user"></i>
+							<span>文章列表</span>
+						</el-menu-item>
+						<el-menu-item index="1-1">
+							<i class="el-icon-user"></i>
+							<span>文章发布</span>
+						</el-menu-item>
+					</el-submenu>
+					<!-- 栏目管理 -->
+					<el-submenu index="1">
+						<template slot="title">
+							<i class="el-icon-location"></i>
+							<span>栏目管理</span>
+						</template>
+						<el-menu-item index="1-1">
+							<i class="el-icon-user"></i>
+							<span>栏目列表</span>
+						</el-menu-item>
+					</el-submenu>
+				</el-menu>
+			</el-aside>
 			<el-container>
 				<el-header>Header</el-header>
 				<el-main>Main</el-main>
