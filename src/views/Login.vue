@@ -44,8 +44,8 @@ export default {
 			// 表单绑定登录数据对象(:model)
 			// 输入框绑定对应的数据(v-model)
 			loginForm: {
-				username: '',
-				password: '',
+				username: '13800138000',
+				password: '123',
 			},
 			// 表单绑定规则对象(:rules)
 			// 表单项绑定对应的规则(prop)
@@ -82,6 +82,9 @@ export default {
 							message: res.data.message,
 							type: 'success',
 						});
+						// 登录成功 存储token
+						localStorage.setItem('heima_toutiao_admin_token', res.data.data.token)
+						this.$router.push({path: '/index'})
 					}
 				} else {
 					// alert('数据不合法');
