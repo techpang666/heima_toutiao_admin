@@ -24,13 +24,18 @@
 						v-model="loginForm.password"
 					></el-input>
 				</el-form-item>
-				<el-button type="primary" class="login-btn">登陆</el-button>
+				<el-button type="primary" class="login-btn" @click="login"
+					>登陆</el-button
+				>
 			</el-form>
 		</div>
 	</div>
 </template>
 
 <script>
+// 引入登录方法
+import { login } from '@/apis/user';
+
 export default {
 	data() {
 		return {
@@ -46,13 +51,20 @@ export default {
 				username: [
 					// 必填项 提示信息 触发器
 					{ required: true, message: '请输入用户名', trigger: 'blur' },
-					{ min: 3, max: 8, message: '长度在 3 到 8 个字符', trigger: 'blur' },
+					// { min: 3, max: 8, message: '长度在 3 到 8 个字符', trigger: 'blur' },
 				],
 				password: [{ required: true, message: '请输入密码', trigger: 'blur' }],
 			},
 		};
 	},
 	methods: {
+		// 发起登录请求(async await)
+		async login() {
+			// 上面的login是点击事件调用的方法
+			// 这个login是axios的login方法
+			let res = await login(this.loginForm);
+			console.log(res);
+		},
 		// 处理输入框的焦点事件
 		handlerFocus(propName) {
 			// 移出表单项的验证结果(clearValidate)
