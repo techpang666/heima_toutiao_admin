@@ -10,12 +10,18 @@ const router = new VueRouter({
 		{
 			name: 'login',
 			path: '/login',
-			component: () => import('@/views/Login.vue'),
+			component: () => import('@/views/login.vue'),
 		},
 		{
 			name: 'index',
 			path: '/index',
 			component: () => import('@/views/index.vue'),
+			// 通过children嵌套路由 嵌套路由都是数组对象
+			children: [{
+				name: 'welcome',
+				path: '/welcome',
+				component: () => import('@/views/welcome.vue')
+			}]
 		},
 	],
 });

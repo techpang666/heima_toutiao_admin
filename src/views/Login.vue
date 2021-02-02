@@ -70,7 +70,7 @@ export default {
 					// 上面的login是点击事件调用的方法
 					// 这个login是axios的login方法
 					let res = await login(this.loginForm);
-					console.log(res);
+					// console.log(res);
 					// 对登录数据进行相关提示
 					if (res.data.statusCode == 401) {
 						Message({
