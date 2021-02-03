@@ -75,7 +75,7 @@ export default {
 					if (res.data.statusCode == 401) {
 						Message({
 							message: res.data.message,
-							type: 'warning',
+							type: 'error',
 						});
 					} else {
 						Message({
